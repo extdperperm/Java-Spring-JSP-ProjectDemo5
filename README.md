@@ -9,6 +9,7 @@ DESCRIPCIÓN
 ----------------------------------------------------------------------------------------------------------------------
 Demostración de como se puede añadir ficheros planos con parámetros haciendo uso de la inyección de dependencias.
 
+Nota: Si se desea ejecutar con una versión de ApacheTomcat superior al 9, es necesario sustituir la dependencia javax por jakarta y actualizar en el web.xml la versión de la faceta (4.0 o superior)
 ----------------------------------------------------------------------------------------------------------------------
 ESPECIFICACIÓN TÉCNICA DE DESARROLLO UTILIZADO
 ----------------------------------------------------------------------------------------------------------------------
