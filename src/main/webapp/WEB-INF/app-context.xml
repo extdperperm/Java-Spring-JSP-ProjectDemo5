@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:context="http://www.springframework.org/schema/context"
+    xsi:schemaLocation="
+    http://www.springframework.org/schema/beans   
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context 
+    http://www.springframework.org/schema/context/spring-context.xsd
+">
+
+	<!-- Se indica a spring que escaneé las anotaciones de las clases que estén bajo el paquete es.dsw.events para incorporar
+	     los componentes señalados y que se pueden convertir en beans del contenedor de contexto. En este caso nos interesa sobrecargar el evento de
+	     arranque de la aplicación.-->
+	<context:component-scan base-package="es.dsw.events"></context:component-scan>
+	
+	<!-- NUEVO: Se indica que escaneé el paquete que en este proyecto contendrá la definición de un componente (bean) al cual
+	     se le inyectará dependencias cuyo origen son de un fichero plano. De esta forma conseguimos crear ficheros de parametrización
+	     de la aplicación. -->
+	<context:component-scan base-package="es.dsw.configs"></context:component-scan>
+
+	<!-- NUEVO: Se especifican los ficheros que contendrán parámetros de configuración adicionales para la aplicación. Se podrían añadir varios
+	     ficheros de parámetros separados por una coma, siempre y cuando no se repitan los nombres de los parámetros que contienen.-->
+	<context:property-placeholder location="classpath:/AppData/AppConf-Entorno.dat,classpath:/AppData/AppConf-Estandar.dat" />
+	
+
+</beans>
+
